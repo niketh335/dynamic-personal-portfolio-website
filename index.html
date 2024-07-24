@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="portfolio-header">
+                <i class="fas fa-code"></i>
+                <h1>My Portfolio</h1>
+            </div>
+            <div class="navbar">
+                <div class="nav-bar">
+                    <a href="#homepage">Homepage</a>
+                    <a href="#about-me">About Me</a>
+                    <a href="#academic-skills">Academic Background and Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact-info">Contact Information</a>
+                </div>
+                <!-- Font size adjustment buttons -->
+                <div class="font-buttons">
+                    <button id="increase-font">A+</button>
+                    <button id="decrease-font">A-</button>
+                </div>
+            </div>
+        </div>
+        <div class="left-aside">
+            <div class="homepage" id="homepage">
+                <h2>Homepage</h2>
+                <p>Welcome to my portfolio! I am excited to share my work, skills, and projects with you. Feel free to browse through my sections to learn more about my background and expertise.</p>
+                <p>I am passionate about web development and strive to create impactful and user-friendly web solutions. Whether it's crafting a responsive website or building dynamic web applications, I enjoy tackling challenges and delivering high-quality results.</p>
+                <p>If you have any questions or would like to collaborate, don't hesitate to reach out!</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="about-me" id="about-me">
+                <h2>About Me</h2>
+                <div class="profile-picture">
+                    <img src="123.jpg" alt="Profile Picture" width="150">
+                </div>
+                <div class="about-me-info">
+                    <p>Hello! My name is k.sai niketh. I am a web developer with a passion for creating beautiful and functional websites. I have a background in B.Tech at SRMAP and have developed skills in various programming languages and frameworks. In my free time, I enjoy travelling and swiming.</p>
+                </div>
+            </div>
+            <div class="skills" id="academic-skills">
+                <div class="skill-container">
+                    <h2>Technical Skills</h2>
+                    <div class="skill-list">
+                        <div class="pie-chart" data-percent="80" data-skill="HTML"></div>
+                        <div class="pie-chart" data-percent="70" data-skill="CSS"></div>
+                        <div class="pie-chart" data-percent="60" data-skill="JavaScript"></div>
+                        <div class="pie-chart" data-percent="50" data-skill="React"></div>
+                        <div class="pie-chart" data-percent="40" data-skill="Python"></div>
+                    </div>
+                </div>
+                <div class="skill-container">
+                    <h2>Professional Skills</h2>
+                    <div class="skill-list">
+                        <div class="pie-chart" data-percent="85" data-skill="Communication"></div>
+                        <div class="pie-chart" data-percent="75" data-skill="Teamwork"></div>
+                        <div class="pie-chart" data-percent="65" data-skill="Problem-solving"></div>
+                        <div class="pie-chart" data-percent="55" data-skill="Leadership"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="projects" id="projects">
+                <h2>Projects</h2>
+                <div class="project-item">
+                    <h3>Portfolio</h3>
+                    <p>A personal portfolio website showcasing my skills and projects.</p> 
+                    <img src="456.png" alt="Project 1" width="600">
+                </div>
+                <div class="project-item">
+                    <h3>E-commerce Website</h3>
+                    <p>An e-commerce website built with React and Node.js.</p> 
+                    <img src="https://www.tigren.com/blog/wp-content/uploads/2022/01/amazon-.png" alt="Project 2" width="600">
+                </div>
+            </div>
+        </div>
+        <div class="right-aside">
+            <div class="contact" id="contact-info">
+                <h2>Contact Information</h2>
+                <p>Email: sainiketh_k@srmap.edu.in</p>
+                <p>Phone: 7995959321</p>
+                
+                <h3>Feedback Form</h3>
+                <form action="mailto:sainiketh_k@srmap.edu.in" method="post" enctype="text/plain">
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" required><br><br>
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+                    <label for="message">Message:</label><br>
+                    <textarea id="message" name="message" rows="4" required></textarea><br><br>
+                    <input type="submit" value="Send">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
