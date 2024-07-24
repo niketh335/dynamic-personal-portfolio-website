@@ -27,4 +27,4 @@ The Dynamic Personal Portfolio Website is a responsive and visually engaging pla
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/dynamic-personal-portfolio-website.git
+   https://github.com/niketh335/dynamic-personal-portfolio-website
