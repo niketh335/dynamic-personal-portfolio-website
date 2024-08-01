@@ -8,7 +8,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-rows: 120px auto 3fr auto;
+    grid-template-rows: 150px auto 3fr auto;
     grid-template-columns: 1fr 5fr 1fr;
     grid-template-areas: 
         "header header header"
@@ -22,7 +22,7 @@ body {
 
 @media (max-width: 678px) {
     .container {
-        grid-template-rows: 80px 1fr 3fr 1fr;
+        grid-template-rows: 120px 1fr 3fr 1fr;
         grid-template-columns: 1fr;
         grid-template-areas: 
             "header"
@@ -36,11 +36,12 @@ body {
     grid-area: header;
     background-color: #ff5722;
     color: #fff;
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .portfolio-header {
@@ -50,13 +51,13 @@ body {
     gap: 10px;
     margin-bottom: 10px;
 }
-    
+
 .portfolio-header i {
     font-size: 2em;
 }
 
 .portfolio-header h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     margin: 0;
 }
 
@@ -108,32 +109,27 @@ body {
     color: #ffffff;
 }
 
+.left-aside, .main, .right-aside {
+    padding: 15px;
+    color: #fff;
+}
+
 .left-aside {
     grid-area: left-aside;
     background-color: #ffc107;
-    color: #fff;
-    padding: 15px;
 }
 
 .main {
     grid-area: main;
     background-color: #4caf50;
-    color: #fff;
-    padding: 15px;
 }
 
 .right-aside {
     grid-area: right-aside;
     background-color: #2196f3;
-    color: #fff;
-    padding: 15px;
 }
 
-.homepage,
-.about-me,
-.skills,
-.projects,
-.contact {
+.homepage, .about-me, .skills, .projects, .contact {
     margin-bottom: 30px;
     background-color: #fff;
     color: #333;
@@ -141,14 +137,16 @@ body {
     border-radius: 8px;
 }
 
+/* Additional spacing adjustments */
+.about-me, .skills, .contact {
+    margin-top: 30px;
+}
+
 .project-item {
     margin-top: 15px;
 }
 
-.about-me-info,
-.skill-container,
-.project-item,
-form {
+.about-me-info, .skill-container, .project-item, form {
     margin-top: 15px;
 }
 
@@ -200,15 +198,16 @@ form {
     border-radius: 50%;
     background-color: #ffffff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.5s ease-in-out;
 }
 
 .pie-chart:before {
     content: attr(data-skill);
     position: absolute;
-    top: 10px;
-    left: 0;
-    right: 0;
-    text-align: center;
+    top: -30px; /* Position above the pie chart */
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 16px;
     color: #333;
 }
@@ -216,12 +215,65 @@ form {
 .pie-chart:after {
     content: attr(data-percent) '%';
     position: absolute;
-    bottom: 10px;
-    left: 0;
-    right: 0;
-    text-align: center;
+    bottom: -30px; /* Position below the pie chart */
+    left: 50%;
+    transform: translateX(-50%);
     font-size: 14px;
     color: #333;
+}
+
+/* Pie Chart SVG */
+.pie-chart svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Circle styles */
+.pie-chart circle {
+    fill: none;
+    stroke-width: 20;
+    transition: stroke-dasharray 1s ease-in-out;
+}
+
+.pie-chart .background {
+    stroke: #e6e6e6;
+}
+
+.pie-chart .progress {
+    stroke: #4caf50;
+    animation: pieChartAnimation 1s ease-in-out forwards;
+}
+
+/* Keyframes for animating the pie chart stroke */
+@keyframes pieChartAnimation {
+    from {
+        stroke-dasharray: 0, 100;
+    }
+    to {
+        stroke-dasharray: var(--progress), var(--circumference);
+    }
+}
+
+/* Centered text */
+.pie-chart text {
+    font-size: 14px;
+    text-anchor: middle;
+}
+
+/* Skill name and percentage positioning */
+.pie-chart .skill-name {
+    font-size: 16px;
+    text-anchor: middle;
+    dy: 0; /* Centered horizontally above the circle */
+}
+
+.pie-chart .skill-percent {
+    font-size: 20px;
+    text-anchor: middle;
+    dy: 0; /* Centered horizontally inside the circle */
 }
 
 /* Feedback Form */
@@ -257,4 +309,34 @@ form input[type="submit"] {
 
 form input[type="submit"]:hover {
     background-color: #45a049;
+}
+
+/* Project Images */
+.project-image {
+    display: block;
+    width: 1000px;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 8px;
+}
+
+.project-image:hover {
+    transform: scale(1.05); /* Slightly enlarges the image */
+    filter: brightness(0.5) sepia(0.2); /* Decreases brightness by 50% and adds sepia effect */
+}
+.typing-container {
+    overflow: hidden; /* Ensures the text is hidden until typed */
+    white-space: nowrap; /* Prevents the text from wrapping */
+    border-right: 3px solid #333; /* Cursor effect */
+    animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #333; }
 }
